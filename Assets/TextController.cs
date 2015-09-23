@@ -33,13 +33,14 @@ public class TextController : MonoBehaviour {
                 text.text = "You try to go back to sleep...";
                 break;
             case GameStates.Start:
-                text.text = "Welcome to The Long Night";
+                text.text = "Welcome to The Long Night!\n";
                 displayOptions(new []{GameStates.Awoken});
                 break;        
             case GameStates.Time:
                 if (hasGlasses)
                 {
-                    text.text = "You look over at the clock and see that it is really late. It's so late, it's actually rather early.\n\n";
+                    text.text = "You look over at the clock and see that it is really late. It's so late, it's " +
+                        "actually rather early.\n\n";
                     displayOptions(new []{GameStates.Sleep});
                 }
                 else
