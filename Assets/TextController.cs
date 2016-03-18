@@ -21,7 +21,7 @@ public class TextController : MonoBehaviour {
         switch (gameState)
         {
             case GameStates.Awoken:
-                text.text = "You awaken to loud shriek. You know not what time it is - it's still pitch black " +
+                text.text = "You awaken to a loud shriek. You know not what time it is - it's still pitch black " +
                     "outside - but you have a pretty good idea where the sound is coming from.\n\n";
                 displayOptions(new []{GameStates.Time, GameStates.Baby, GameStates.Sleep});
                 break;
@@ -30,10 +30,11 @@ public class TextController : MonoBehaviour {
                 displayOptions(new []{GameStates.Sleep});
                 break;
             case GameStates.Sleep: 
-                text.text = "You try to go back to sleep...";
+                text.text = "Who are you kidding?!?\n\n";
+				displayOptions(new []{GameStates.Time, GameStates.Baby});
                 break;
             case GameStates.Start:
-                text.text = "Welcome to The Long Night!\n";
+                text.text = "Welcome to The Long Night!\n\n";
                 displayOptions(new []{GameStates.Awoken});
                 break;        
             case GameStates.Time:
@@ -48,7 +49,7 @@ public class TextController : MonoBehaviour {
                     text.text = "You don't have your glasses so you can't see the clock across " +
                         "the room. Why you keep the clock on the other side of the room is a " +
                         "question for another sleepless night.\n\n";
-                    displayOptions(new []{ GameStates.Sleep });
+                    displayOptions(new []{GameStates.Sleep});
                 }
                 break;
             case GameStates.Baby:
